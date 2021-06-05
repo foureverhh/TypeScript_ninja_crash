@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+      "target": "ES2018",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "rootDir": "./src",      //source code diretory
+      "outDir": "./public/js", //parsed js code diretory
+      "forceConsistentCasingInFileNames": true
+    },
+    "include":["src"],
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Recommended"
+  }

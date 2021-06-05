@@ -1,0 +1,14 @@
+"use strict";
+let dyna_age;
+dyna_age = true;
+dyna_age = "hello";
+let dyna_mixed = [];
+dyna_mixed.push('helo');
+dyna_mixed.push(30);
+dyna_mixed.push(true);
+console.log(dyna_mixed);
+let dyna_ninja;
+dyna_ninja = { age: 30, name: 'bird' };
+dyna_ninja.age = "age";
+dyna_ninja.name = 'hello world';
+console.log(dyna_ninja);

@@ -16,3 +16,22 @@ form.addEventListener('submit', (e) => {
     console.log(details.value);
     console.log(amount.valueAsNumber);
 });
+//classes
+class Invoice {
+    constructor(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    format() {
+        return `${this.client} owes $${this.amount} for ${this.details}`;
+    }
+}
+const invoiceOne = new Invoice('mario', 'work on mario website', 250);
+const invoiceTwo = new Invoice('marry', 'work on marry website', 300);
+console.log(invoiceOne.format());
+console.log(invoiceTwo.format());
+let invoices = [];
+invoices.push(invoiceOne);
+invoices.push(invoiceTwo);
+console.log(invoices);

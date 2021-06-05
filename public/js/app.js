@@ -1,4 +1,4 @@
-"use strict";
+import { Invoice } from './classes/invoice';
 //! means you are certain element exits
 const anchor = document.querySelector('a');
 //console.log(anchor.href);
@@ -16,25 +16,6 @@ form.addEventListener('submit', (e) => {
     console.log(details.value);
     console.log(amount.valueAsNumber);
 });
-//classes
-class Invoice {
-    //readonly client :string;
-    //private details :string;
-    //amount :number;
-    //constructor(c:string, d:string, a: number){
-    //    this.client = c;
-    //    this.details = d;
-    //    this.amount = a;
-    //}
-    constructor(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    format() {
-        return `${this.client} owes $${this.amount} for ${this.details}`;
-    }
-}
 const invoiceOne = new Invoice('mario', 'work on mario website', 250);
 const invoiceTwo = new Invoice('marry', 'work on marry website', 300);
 //console.log(invoiceOne.format());

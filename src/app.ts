@@ -1,4 +1,29 @@
-import { Invoice } from './classes/invoice';
+//interface
+interface IsPerson {
+    name: string,
+    age: number,
+    speak(a: string):void;
+    spend(a: number): number;
+}
+let person1 :IsPerson = {
+   name:'li',
+   age:30,
+   speak(a:string):void {
+        console.log(this.name + ' speaks ' + a)
+   },
+   spend(a:number):number {
+       console.log('I spend ' + a + ' dollar')
+       return a * 100;
+   }
+}
+
+const greetPerson = (person: IsPerson) => {
+    console.log(person.age);
+}
+
+console.log(person1)
+
+import { Invoice } from './classes/invoice.js';
 
 //! means you are certain element exits
 const anchor = document.querySelector('a')!;

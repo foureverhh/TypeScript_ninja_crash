@@ -1,4 +1,19 @@
-import { Invoice } from './classes/invoice';
+let person1 = {
+    name: 'li',
+    age: 30,
+    speak(a) {
+        console.log(this.name + ' speaks ' + a);
+    },
+    spend(a) {
+        console.log('I spend ' + a + ' dollar');
+        return a * 100;
+    }
+};
+const greetPerson = (person) => {
+    console.log(person.age);
+};
+console.log(person1);
+import { Invoice } from './classes/invoice.js';
 //! means you are certain element exits
 const anchor = document.querySelector('a');
 //console.log(anchor.href);

@@ -15,6 +15,7 @@ const greetPerson = (person) => {
 console.log(person1);
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
+import { ListTemplate } from './classes/ListTemplate.js';
 let docOne;
 let docTwo;
 let invoiceOne = new Invoice('mario', 'work on mario website', 250);
@@ -36,6 +37,9 @@ const type = document.querySelector('#type');
 const tofrom = document.querySelector('#tofrom');
 const details = document.querySelector('#details');
 const amount = document.querySelector('#amount');
+//list template instance
+const ul = document.querySelector('.item-list');
+const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let doc;
@@ -45,7 +49,8 @@ form.addEventListener('submit', (e) => {
     else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
-    console.log(doc);
+    list.render(doc, type.value, 'end');
+    //console.log(doc);
     /*
     console.log(type.value)
     console.log(tofrom.value)

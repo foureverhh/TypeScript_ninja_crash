@@ -1,5 +1,6 @@
 //classes
-export class Invoice {
+import {HasFormatter} from '../interfaces/HasFormatter.js'
+export class Invoice implements HasFormatter{
     //readonly client :string;
     //private details :string;
     //amount :number;
@@ -9,7 +10,6 @@ export class Invoice {
     //    this.details = d;
     //    this.amount = a;
     //}
-
     constructor(
         readonly client: string,
         private details: string,

@@ -1,4 +1,3 @@
-//classes
 export class Invoice {
     //readonly client :string;
     //private details :string;

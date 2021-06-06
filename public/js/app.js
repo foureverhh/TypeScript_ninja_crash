@@ -13,7 +13,19 @@ const greetPerson = (person) => {
     console.log(person.age);
 };
 console.log(person1);
-import { Invoice } from './classes/invoice.js';
+import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+let docOne;
+let docTwo;
+let invoiceOne = new Invoice('mario', 'work on mario website', 250);
+let invoiceTwo = new Invoice('marry', 'work on marry website', 300);
+docOne = new Invoice('yoshi', 'web work', 250);
+docTwo = new Payment('mario', 'plumbing work', 300);
+let docs = [invoiceTwo];
+docs.push(docOne);
+docs.push(docTwo);
+docs.push(invoiceOne);
+console.log('docs =>' + docs);
 //! means you are certain element exits
 const anchor = document.querySelector('a');
 //console.log(anchor.href);
@@ -26,13 +38,21 @@ const details = document.querySelector('#details');
 const amount = document.querySelector('#amount');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(type.value);
-    console.log(tofrom.value);
-    console.log(details.value);
-    console.log(amount.valueAsNumber);
+    let doc;
+    if (type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
+    /*
+    console.log(type.value)
+    console.log(tofrom.value)
+    console.log(details.value)
+    console.log(amount.valueAsNumber)
+    */
 });
-const invoiceOne = new Invoice('mario', 'work on mario website', 250);
-const invoiceTwo = new Invoice('marry', 'work on marry website', 300);
 //console.log(invoiceOne.format());
 //console.log(invoiceTwo.format());
 let invoices = [];

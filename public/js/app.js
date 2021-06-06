@@ -68,3 +68,34 @@ invoices.forEach(invoice => {
     //invoice.client = 'hello';
     console.log(invoice.client, invoice.amount, invoice.format());
 });
+//Generics
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne_uid = addUID({ name: 'yoshi', age: 40 });
+console.log(docOne_uid);
+console.log(docOne_uid.name);
+const addUID_extend_object = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+const addUID_extend_specific_object = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+const docThree = {
+    uid: 1,
+    resourceName: 'person',
+    data: 'string data'
+};
+const docFour = {
+    uid: 1,
+    resourceName: 'person',
+    data: { data: 'hello world' }
+};
+const docfive = {
+    uid: 1,
+    resourceName: 'person',
+    data: ['', '', '']
+};

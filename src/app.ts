@@ -95,5 +95,50 @@ invoices.forEach(invoice => {
     console.log(invoice.client,invoice.amount,invoice.format());
 });
 
+//Generics
 
+const addUID = <T>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj,uid};
+}
+
+let docOne_uid = addUID({name: 'yoshi', age: 40});
+console.log(docOne_uid);
+console.log(docOne_uid.name);
+
+
+const addUID_extend_object = <T extends object>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj,uid};
+}
+
+const addUID_extend_specific_object = <T extends {name:string}>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj,uid};
+}
+
+//generics with interfaces
+interface Resouce <T> {
+    uid: number;
+    resourceName: string;
+    data: T;
+}
+
+const docThree: Resouce<string> = {
+    uid:1 ,
+    resourceName: 'person',
+    data: 'string data'
+}
+
+const docFour: Resouce<object> = {
+    uid:1 ,
+    resourceName: 'person',
+    data: {data: 'hello world'}
+}
+
+const docfive: Resouce<string []> = {
+    uid:1 ,
+    resourceName: 'person',
+    data: ['','','']
+}
 

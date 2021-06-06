@@ -117,28 +117,31 @@ const addUID_extend_specific_object = <T extends {name:string}>(obj: T) => {
     return {...obj,uid};
 }
 
-//generics with interfaces
+//generics with interfaces and enum
+enum ResourceType {BOOK, AUTHOR, FILM, DIRECTOR; PERSON}
 interface Resouce <T> {
     uid: number;
-    resourceName: string;
+    resourceType: ResourceType;
     data: T;
 }
 
 const docThree: Resouce<string> = {
     uid:1 ,
-    resourceName: 'person',
+    resourceType: ResourceType.AUTHOR,
     data: 'string data'
 }
 
 const docFour: Resouce<object> = {
     uid:1 ,
-    resourceName: 'person',
+    resourceType: ResourceType.PERSON,
     data: {data: 'hello world'}
 }
 
 const docfive: Resouce<string []> = {
     uid:1 ,
-    resourceName: 'person',
+    resourceType: ResourceType.BOOK,
     data: ['','','']
 }
+
+console.log(ResourceType[docfive.resourceType]);
 

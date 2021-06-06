@@ -84,18 +84,28 @@ const addUID_extend_specific_object = (obj) => {
     let uid = Math.floor(Math.random() * 100);
     return Object.assign(Object.assign({}, obj), { uid });
 };
+//generics with interfaces and enum
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
 const docThree = {
     uid: 1,
-    resourceName: 'person',
+    resourceType: ResourceType.AUTHOR,
     data: 'string data'
 };
 const docFour = {
     uid: 1,
-    resourceName: 'person',
+    resourceType: ResourceType.PERSON,
     data: { data: 'hello world' }
 };
 const docfive = {
     uid: 1,
-    resourceName: 'person',
+    resourceType: ResourceType.BOOK,
     data: ['', '', '']
 };
+console.log(ResourceType[docfive.resourceType]);
